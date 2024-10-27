@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import { CartProvider, useCart } from './context/CartContext';
+import FloatingText from './pages/FloatingText';
 
 function Navbar() {
   const { cart } = useCart();
@@ -10,7 +11,8 @@ function Navbar() {
 
   return (
     <nav className="p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white flex justify-between items-center shadow-lg">
-      <Link to="/" className="text-2xl font-bold hover:opacity-90 transition-opacity">🛒 Fake Store</Link>
+      <Link to="/" className="text-2xl font-bold hover:opacity-90 transition-opacity">🛒 PRAKASH STORE</Link>
+      
       <Link to="/cart" className="relative bg-white text-blue-500 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
         View Cart
         {totalItems > 0 && (
@@ -19,6 +21,7 @@ function Navbar() {
           </span>
         )}
       </Link>
+      
     </nav>
   );
 }
@@ -35,6 +38,7 @@ function App() {
           </Routes>
         </Router>
       </div>
+      <FloatingText />
     </CartProvider>
   );
 }
